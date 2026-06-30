@@ -1153,70 +1153,62 @@
 
     /* New CSS */
     .feature-icons {
-      display: grid;
-      gap: 24px;
-    }
-    
-    /* Top row */
-    .feature-icons > .feature-icon:nth-child(-n+3) {
-      min-height: 130px;
-    }
-    
-    /* 3-column top row */
-    .feature-icons {
-      grid-template-columns: repeat(12, 1fr);
-    }
-    
-    .feature-icons > .feature-icon:nth-child(1),
-    .feature-icons > .feature-icon:nth-child(2),
-    .feature-icons > .feature-icon:nth-child(3) {
-      grid-column: span 4;
-    }
-    
-    /* 4-column bottom row */
-    .feature-icons > .feature-icon:nth-child(4),
-    .feature-icons > .feature-icon:nth-child(5),
-    .feature-icons > .feature-icon:nth-child(6),
-    .feature-icons > .feature-icon:nth-child(7) {
-      grid-column: span 3;
-    }
-    
-    .feature-icon {
-      background: #fff;
-      border-radius: 28px;
-      padding: 28px 24px;
-      text-align: center;
-    
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 10px;
-    
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 1.35;
-      color: #1e1e1e;
-    }
-    
-    .feature-icon--highlight {
-      background: #f6dde8;
-      border: 2px solid #f7a8d3;
-    }
-    
-    .fi {
-      font-size: 26px;
-      line-height: 1;
-    }
-    
-    @media (max-width: 768px) {
-      .feature-icons {
-        grid-template-columns: 1fr;
-      }
-    
-      .feature-icons > .feature-icon {
-        grid-column: span 1 !important;
-      }
-    }
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+/* Top row */
+.feature-icons > .feature-icon:nth-child(1),
+.feature-icons > .feature-icon:nth-child(2),
+.feature-icons > .feature-icon:nth-child(3) {
+  grid-column: span 4;
+  background: #f3dce2;
+  border: 2px solid #f2a3d0;
+}
+
+/* Bottom row */
+.feature-icons > .feature-icon:nth-child(n+4) {
+  grid-column: span 3;
+  background: #f7f7f7;
+}
+
+.feature-icon {
+  border-radius: 28px;
+  padding: 22px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  text-align: center;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+
+  min-height: 110px; /* much shorter */
+}
+
+.feature-icon .fi {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .feature-icons {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-icons > .feature-icon {
+    grid-column: span 1 !important;
+    min-height: auto;
+    padding: 18px;
+  }
+}
   </style>
 </head>
 <body>
@@ -1334,11 +1326,6 @@
 
       <div class="clinical-badges-row">
         <span class="clinical-badge">CLINICALLY RECOGNIZED</span>
-      </div>
-      <div class="clinical-sub">
-        🌍 Recognized by menopause specialists &nbsp;·&nbsp;
-        💪 Used in pelvic floor wellness &nbsp;·&nbsp;
-        📖 Backed by 6 peer-reviewed studies
       </div>
 
       <div class="feature-icons">
