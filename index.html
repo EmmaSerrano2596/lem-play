@@ -1150,6 +1150,73 @@
       .footer-grid { grid-template-columns: 1fr; }
       .nl-form { flex-direction: column; }
     }
+
+    /* New CSS */
+    .feature-icons {
+      display: grid;
+      gap: 24px;
+    }
+    
+    /* Top row */
+    .feature-icons > .feature-icon:nth-child(-n+3) {
+      min-height: 130px;
+    }
+    
+    /* 3-column top row */
+    .feature-icons {
+      grid-template-columns: repeat(12, 1fr);
+    }
+    
+    .feature-icons > .feature-icon:nth-child(1),
+    .feature-icons > .feature-icon:nth-child(2),
+    .feature-icons > .feature-icon:nth-child(3) {
+      grid-column: span 4;
+    }
+    
+    /* 4-column bottom row */
+    .feature-icons > .feature-icon:nth-child(4),
+    .feature-icons > .feature-icon:nth-child(5),
+    .feature-icons > .feature-icon:nth-child(6),
+    .feature-icons > .feature-icon:nth-child(7) {
+      grid-column: span 3;
+    }
+    
+    .feature-icon {
+      background: #fff;
+      border-radius: 28px;
+      padding: 28px 24px;
+      text-align: center;
+    
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #1e1e1e;
+    }
+    
+    .feature-icon--highlight {
+      background: #f6dde8;
+      border: 2px solid #f7a8d3;
+    }
+    
+    .fi {
+      font-size: 26px;
+      line-height: 1;
+    }
+    
+    @media (max-width: 768px) {
+      .feature-icons {
+        grid-template-columns: 1fr;
+      }
+    
+      .feature-icons > .feature-icon {
+        grid-column: span 1 !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1265,56 +1332,53 @@
         </div>
       </div>
 
-      <div class="block-benefits_list_xEczPY"><p class="jc-text-xs jc-uppercase jc-leading-4 font-es-regular jc-mb-2" style="color: rgba(18,18,18,0.7);">CLINICALLY RECOGNIZED</p><div class="benefits-list__items jc-flex jc-flex-col lg:jc-flex-row jc-gap-2"><button type="button" class="benefits-list__card benefits-list__card--interactive" data-clinical-evidence-modal="">
-            <span class="benefits-list__text">🌍 Recognized by menopause specialists</span></button><button type="button" class="benefits-list__card benefits-list__card--interactive" data-clinical-evidence-modal="">
-            <span class="benefits-list__text">💪 Used in pelvic floor wellness</span></button><button type="button" class="benefits-list__card benefits-list__card--interactive" data-clinical-evidence-modal="">
-            <span class="benefits-list__text">📖 Backed by 6 peer-reviewed studies</span><svg class="benefits-list__arrow jc-shrink-0" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg></button></div>
+      <div class="clinical-badges-row">
+        <span class="clinical-badge">CLINICALLY RECOGNIZED</span>
+      </div>
+      <div class="clinical-sub">
+        🌍 Recognized by menopause specialists &nbsp;·&nbsp;
+        💪 Used in pelvic floor wellness &nbsp;·&nbsp;
+        📖 Backed by 6 peer-reviewed studies
+      </div>
 
-  <style>
-    .block-benefits_list_xEczPY .benefits-list__card {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      background: #fce3ea;
-      border: 1px solid rgba(255,48,204,0.3);
-      border-radius: 16px;
-      text-decoration: none;
-      color: #1a1a1a;
-    }
-    .block-benefits_list_xEczPY .benefits-list__text {
-      flex: 1 0 0;
-      min-width: 0;
-      font-size: 14px;
-      line-height: 20px;
-      text-align: center;
-      font-family: 'ESRebondGrotesque-Semibold', sans-serif;
-      font-weight: 600;
-    }
-    .block-benefits_list_xEczPY .benefits-list__card--interactive {
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .block-benefits_list_xEczPY .benefits-list__card--interactive:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .block-benefits_list_xEczPY .benefits-list__arrow {
-      color: #FF30CC;
-    }
-    .block-benefits_list_xEczPY button.benefits-list__card {
-      font: inherit;
-    }
-    @media screen and (min-width: 1000px) {
-      .block-benefits_list_xEczPY .benefits-list__card {
-        flex: 1 0 0;
-        min-width: 0;
-      }
-    }
-  </style>
-</div>
+      <div class="feature-icons">
+        <!-- Top Row -->
+        <div class="feature-icon feature-icon--highlight">
+          <span class="fi">🌍</span>
+          <span>Recognized by menopause specialists</span>
+        </div>
+      
+        <div class="feature-icon feature-icon--highlight">
+          <span class="fi">💪</span>
+          <span>Used in pelvic floor wellness</span>
+        </div>
+      
+        <div class="feature-icon feature-icon--highlight">
+          <span class="fi">📖</span>
+          <span>Backed by 6 peer-reviewed studies</span>
+        </div>
+      
+        <!-- Bottom Row -->
+        <div class="feature-icon">
+          <span class="fi">🌀</span>
+          <span>12 unique intensities and patterns</span>
+        </div>
+      
+        <div class="feature-icon">
+          <span class="fi">🤫</span>
+          <span>Quiet and discreet (Shhh!)</span>
+        </div>
+      
+        <div class="feature-icon">
+          <span class="fi">💛</span>
+          <span>Medical-grade silicone</span>
+        </div>
+      
+        <div class="feature-icon">
+          <span class="fi">💦</span>
+          <span>Waterproof (USB-C &amp; Magnetic Compatible)</span>
+        </div>
+      </div>
 
       <p class="product-description">
         Meet Lem Play — your zesty lemon playmate, now with a whole new dimension of fun. Everything you loved about Lem, upgraded with Bluetooth and the Nancy Play app. Hand the controls to your partner across the room or across the world. With 12 unique intensities and patterns and whisper-quiet operation, Lem Play is the perfect choice for solo sessions and couple adventures alike.
